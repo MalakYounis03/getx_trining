@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_trining/comments/view/comments_screen.dart';
 import 'package:getx_trining/posts/model/posts_model.dart';
 import 'package:getx_trining/user_controller.dart';
 
@@ -37,9 +36,7 @@ class HomeScreen extends GetView<UserController> {
                       ),
                       subtitle: Text(userList[index].body),
                       onTap: () {
-                        Get.to(
-                          () => CommentsScreen(postsModel: userList[index]),
-                        );
+                        Get.toNamed("/comments", arguments: userList[index]);
                       },
                     ),
                   );
